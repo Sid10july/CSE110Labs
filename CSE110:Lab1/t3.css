@@ -1,0 +1,115 @@
+/* Section 1 */
+#S1 {
+    display: inline-block;
+    background-color: rgb(245, 240, 230);
+    scroll-margin-top: 40px; 
+    width: 100vw;
+}
+
+#S1I {
+    padding: 10px;
+}
+
+/* Section 2 with background image */
+#S2 {
+    display: inline-block; 
+    width: 100vw;
+    scroll-margin-top: 40px; 
+    background-image: url("https://www.ucsd.edu/_resources/img/bg-orbs-1.jpg");
+}
+
+#S2I {
+    padding: 10px; 
+}
+
+/* Section 3 with grid layout */
+#S3 {
+    display: inline-block;
+    background-color: rgb(245, 240, 230);
+    scroll-margin-top: 40px; 
+    width: 100vw;
+}
+
+#S3I {
+    padding: 10px; 
+}
+
+/* Navigation bar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    max-width: 600px;
+}
+  
+li {
+    float: left;
+}
+  
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 28px;
+}
+  
+li a:hover {
+    background-color: #182b49;
+    color: white;
+}
+
+/* Sticky navbar */
+#navbar {
+    position: sticky; 
+    top: 0;
+}
+
+/* 4-column grid for Section 3 */
+.wrapper {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+#one, #two, #three, #four {
+    max-height: 500px; 
+    overflow-y: scroll;
+    background-color: #182b49;
+    color: white;
+    padding: 10px; 
+}
+
+/* Responsive design */
+@media screen and (max-width: 800px) {
+    #navbar {
+      display: none;
+    }
+    li a {
+      display: none;
+    }
+    #img1 {
+      max-width: 75%;
+    }
+    h2 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 20px;
+    }
+    .wrapper {
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+    }
+}
+
+
+img {
+    max-width: 100%;
+}
