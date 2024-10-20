@@ -1,4 +1,3 @@
-// src/toDoList.test.tsx
 import { render, screen, fireEvent } from "@testing-library/react";
 import { ToDoList } from "./toDoList";
 

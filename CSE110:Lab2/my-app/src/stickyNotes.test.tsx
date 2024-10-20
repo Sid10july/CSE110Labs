@@ -73,19 +73,21 @@ describe("StickyNotes Component", () => {
   // Test: Deletes a note
   test("deletes a note", () => {
     render(<StickyNotes />);
-
+  
     const createNoteTitleInput = screen.getByPlaceholderText("Note Title");
     const createNoteContentTextarea = screen.getByPlaceholderText("Note Content");
     const createNoteButton = screen.getByText("Create Note");
-
+  
     fireEvent.change(createNoteTitleInput, { target: { value: "Note to Delete" } });
     fireEvent.change(createNoteContentTextarea, { target: { value: "Content to Delete" } });
     fireEvent.click(createNoteButton);
-
-    // Delete the note
-    const deleteButton = screen.getByText("x");
-    fireEvent.click(deleteButton);
-
+  
+    // Find all delete buttons
+    const deleteButtons = screen.getAllByText("x");
+  
+    // Delete the first note (adjust index if necessary)
+    fireEvent.click(deleteButtons[0]);
+  
     // Assert the note is no longer in the document
     expect(screen.queryByText("Note to Delete")).not.toBeInTheDocument();
   });
